@@ -33,7 +33,7 @@ float dividir(int a, int b){
 int factorizar(int a){
     int rta;
 
-    if(a == 1){
+    if(a <= 1){
         rta = 1;
     }else{
         rta = a * factorizar(a - 1);

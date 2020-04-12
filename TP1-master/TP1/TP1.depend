@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1586723058 source:c:\users\agos\desktop\nueva carpeta\tp1\tp1-master\tp1\main.c
+1586725617 source:c:\users\agos\desktop\nueva carpeta\tp1\tp1-master\tp1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"herramientas.h"
 
 1586709496 c:\users\agos\desktop\nueva carpeta\tp1\tp1-master\tp1\herramientas.h
 
-1586723384 source:c:\users\agos\desktop\nueva carpeta\tp1\tp1-master\tp1\herramientas.c
+1586725859 source:c:\users\agos\desktop\nueva carpeta\tp1\tp1-master\tp1\herramientas.c
 	<stdio.h>
 	<stdlib.h>
 	"herramientas.h"

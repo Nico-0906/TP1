@@ -36,7 +36,7 @@ do{
         printf("    b) Calcular la resta (A - B) \n");
         printf("    c) Calcular la division (A / B) \n");
         printf("    d) Calcular la multiplicacion (A * B) \n");
-        printf("    e) Calcular el factorial (A!) \n");
+        printf("    e) Calcular el factorial (A! B!) (solo se puede hasta 12) \n");
     printf("4. Informar resultados:\n");
     printf("5. Salir\n\n\n");
 
@@ -44,16 +44,19 @@ do{
     scanf("%d", &opcionNumero);
 
     switch (opcionNumero){
+
         case 1:
             printf("Ingrese primer operando:\n\n");
             scanf("%d", &num1);
             bandera1 = 1;
             break;
+
         case 2:
             printf("Ingrese segundo operando:\n\n");
             scanf("%d", &num2);
             bandera2 = 1;
             break;
+
         case 3:
             suma = sumar(num1, num2);
             resta = restar(num1, num2);
@@ -63,21 +66,37 @@ do{
             factorial2 = factorizar(num2);
             printf("Se han realizado las operaciones\n\n");
             break;
+
         case 4:
             printf("a) El resultado de A+B es: %d\n", suma);
             printf("b) El resultado de A-B es: %d\n", resta);
+
             if(num2 != 0){
-            printf("c) El resultado de A/B es: %.2f\n", division); //o “No es posible dividir por cero”
+                printf("c) El resultado de A/B es: %.2f\n", division);
             }else{
-            printf("c) No se puede dividir por 0\n");
+                printf("c) Error: No se puede dividir por 0\n");
             }
-            printf("d) El resultado de A*B es: %d\n\n", multiplicacion);
-            printf("e) El factorial de A es: %d y El factorial de B es: %d\n\n", factorial1, factorial2);
+
+            printf("d) El resultado de A*B es: %d\n", multiplicacion);
+
+            if(num1 > 12){
+                printf("e) Solo se puede factorizar hasta 12\n");
+            }else{
+                printf("e) El factorial de A es: %d\n", factorial1);
+            }
+
+            if(num2 > 12){
+                printf("    Solo se puede factorizar hasta 12\n\n");
+            }else{
+                printf("    El factorial de B es: %d\n\n", factorial2);
+            }
             break;
+
         case 5:
             printf("\nAdios\n\n");
             opcionNumero = 5;
             break;
+
         default:
             printf("\nOpcion incorrecta :( \n\n");
             break;
