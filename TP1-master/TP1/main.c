@@ -6,72 +6,84 @@
 int main()
 {
     int opcionNumero;
-    int primOperando;
-    int segOperando;
-    char opcionLetra;
+    int num1 = 0;
+    int num2 = 0;
     int suma;
     int resta;
-    float division;
     int multiplicacion;
-    int factorial;
-    int factorizador;
+    float division;
+    int factorial1;
+    int factorial2;
+    int bandera1 = 0;
+    int bandera2 = 0;
 
-    do{
-    printf("1-Ingresar 1er operando (A=x):\n");
-    printf("2-Ingresar 2do operando (B=y):\n");
+do{
+
+    if(bandera1 == 0){
+        printf("\n1. Ingresar 1er operando (A = %d):\n", num1);
+    }else{
+        printf("\n1. Cambiar 1er operando (A = %d):\n", num1);
+    }
+
+    if(bandera2 == 0){
+        printf("2. Ingresar 2do operando (B = %d):\n", num2);
+    }else{
+        printf("2. Cambiar 2do operando (B = %d):\n", num2);
+    }
+
     printf("3. Calcular todas las operaciones:\n");
+        printf("    a) Calcular la suma (A + B) \n");
+        printf("    b) Calcular la resta (A - B) \n");
+        printf("    c) Calcular la division (A / B) \n");
+        printf("    d) Calcular la multiplicacion (A * B) \n");
+        printf("    e) Calcular el factorial (A!) \n");
     printf("4. Informar resultados:\n");
-    printf("5. Salir\n");
+    printf("5. Salir\n\n\n");
 
-    scanf("%d\n", &opcionNumero);
+
+    scanf("%d", &opcionNumero);
 
     switch (opcionNumero){
         case 1:
-            scanf("%d", &primOperando);
+            printf("Ingrese primer operando:\n\n");
+            scanf("%d", &num1);
+            bandera1 = 1;
             break;
         case 2:
-            scanf("%d", &segOperando);
+            printf("Ingrese segundo operando:\n\n");
+            scanf("%d", &num2);
+            bandera2 = 1;
             break;
         case 3:
-            printf("a) Calcular la suma (A+B) \n");
-            printf("b) Calcular la resta (A-B) \n");
-            printf("c) Calcular la division (A/B) \n");
-            printf("d) Calcular la multiplicacion (A*B) \n");
-            printf("e) Calcular el factorial (A!) \n");
-
-            scanf("%c", &opcionLetra);
-
-            switch(opcionLetra){
-                case 'a':
-                    suma = primOperando + segOperando;
-                    printf("La suma es %d\n", suma);
-                    break;
-                case 'b':
-                    resta = primOperando - segOperando;
-                    printf("La resta es %d\n", resta);
-                    break;
-                case 'c':
-                    division = (float) primOperando / segOperando;
-                    printf("La division es %.2f\n", division);
-                    break;
-                case 'd':
-                    multiplicacion = primOperando * segOperando;
-                    printf("La multiplicacion es %d\n", multiplicacion);
-                    break;
-                case 'e':
-                    factorizador = 1;
-                    while(factorial > 1) {
-                    factorizador *= factorial;
-                    factorial--;
-                    }
-                    printf("El factorial de A es %d\n", factorizador);
-                    break;
+            suma = sumar(num1, num2);
+            resta = restar(num1, num2);
+            division = dividir(num1, num2);
+            multiplicacion = multiplicar(num1, num2);
+            factorial1 = factorizar(num1);
+            factorial2 = factorizar(num2);
+            printf("Se han realizado las operaciones\n\n");
             break;
+        case 4:
+            printf("a) El resultado de A+B es: %d\n", suma);
+            printf("b) El resultado de A-B es: %d\n", resta);
+            if(num2 != 0){
+            printf("c) El resultado de A/B es: %.2f\n", division); //o “No es posible dividir por cero”
+            }else{
+            printf("c) No se puede dividir por 0\n");
             }
-
+            printf("d) El resultado de A*B es: %d\n\n", multiplicacion);
+            printf("e) El factorial de A es: %d y El factorial de B es: %d\n\n", factorial1, factorial2);
+            break;
+        case 5:
+            printf("\nAdios\n\n");
+            opcionNumero = 5;
+            break;
+        default:
+            printf("\nOpcion incorrecta :( \n\n");
+            break;
     }
 
-    }while(opcionNumero!=5);
+}while(opcionNumero!=5);
 
 
     return 0;

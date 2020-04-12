@@ -24,11 +24,20 @@ int multiplicar(int a, int b){
 
 
 float dividir(int a, int b){
-    int rta;
+    float rta;
     rta = (float) a / b;
     return rta;
 }
 
 
 int factorizar(int a){
+    int rta;
+
+    if(a == 1){
+        rta = 1;
+    }else{
+        rta = a * factorizar(a - 1);
+    }
+
+    return rta;
 }
