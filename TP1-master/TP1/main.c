@@ -12,8 +12,8 @@ int main()
     int resta;
     int multiplicacion;
     float division;
-    int factorial1;
-    int factorial2;
+    double factorial1;
+    double factorial2;
     int bandera1 = 0;
     int bandera2 = 0;
 
@@ -31,12 +31,12 @@ do{
         printf("2. Cambiar 2do operando (B = %d):\n", num2);
     }
 
-    printf("3. Calcular todas las operaciones:\n");
+    printf("3. Calcular todas las operaciones: \n");
         printf("    a) Calcular la suma (A + B) \n");
         printf("    b) Calcular la resta (A - B) \n");
         printf("    c) Calcular la division (A / B) \n");
         printf("    d) Calcular la multiplicacion (A * B) \n");
-        printf("    e) Calcular el factorial (A! B!) (solo se puede hasta 12) \n");
+        printf("    e) Calcular el factorial (A! B!) \n");
     printf("4. Informar resultados:\n");
     printf("5. Salir\n\n\n");
 
@@ -47,13 +47,13 @@ do{
 
         case 1:
             printf("Ingrese primer operando:\n\n");
-            scanf("%d", &num1);
+            num1 = getIntPositivo();
             bandera1 = 1;
             break;
 
         case 2:
             printf("Ingrese segundo operando:\n\n");
-            scanf("%d", &num2);
+            num2 = getIntPositivo();
             bandera2 = 1;
             break;
 
@@ -78,18 +78,8 @@ do{
             }
 
             printf("d) El resultado de A*B es: %d\n", multiplicacion);
-
-            if(num1 > 12){
-                printf("e) Solo se puede factorizar hasta 12\n");
-            }else{
-                printf("e) El factorial de A es: %d\n", factorial1);
-            }
-
-            if(num2 > 12){
-                printf("    Solo se puede factorizar hasta 12\n\n");
-            }else{
-                printf("    El factorial de B es: %d\n\n", factorial2);
-            }
+            printf("e) El factorial de A es: %.lf\n", factorial1);
+            printf("    El factorial de B es: %.lf\n\n", factorial2);
             break;
 
         case 5:

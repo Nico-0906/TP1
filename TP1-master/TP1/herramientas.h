@@ -1,10 +1,6 @@
 #ifndef HERRAMIENTAS
 #define HERRAMIENTAS
 
-
-
-#endif // HERRAMIENTAS
-
 /** \brief  Suma dos enteros ingresados
  *
  * \param   Primer entero a sumar
@@ -49,4 +45,9 @@ float dividir(int a, int b);
  * \return  Retorna el resultado de la factorizacion
  *
  */
-int factorizar(int a);
+double factorizar(int a);
+
+int getIntPositivo();
+
+
+#endif // HERRAMIENTAS
